@@ -11,6 +11,9 @@ const app = express();
 app.use(cors());
 
 // middleware
+const notFoundMiddleware = require('./app/middleware/not-found');
+const errorHandlerMiddleware = require('./app/middleware/error-handler');
+
 app.use(morgan('tiny'));
 app.use(express.json());
 
@@ -22,6 +25,9 @@ app.use(helmet());
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to application." });
 });
+
+app.use(notFoundMiddleware);
+app.use(errorHandlerMiddleware);
 
 // set port, listen for requests
 const port = process.env.PORT || 3000;
