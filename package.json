@@ -5,8 +5,12 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon serve.js",
-    "migrate:up": "npx sequelize-cli db:migrate",
-    "migrate:undo": "npx sequelize-cli db:migrate:undo",
+    "db1:create": "npx sequelize-cli --options-path ./.sequelizerc-db1 db:create",
+    "db2:create": "npx sequelize-cli --options-path ./.sequelizerc-db2 db:create",
+    "db1:migrate:up": "npx sequelize-cli --options-path ./.sequelizerc-db1 db:migrate",
+    "db2:migrate:up": "npx sequelize-cli --options-path ./.sequelizerc-db2 db:migrate",
+    "db1:migrate:undo": "npx sequelize-cli --options-path ./.sequelizerc-db1 db:migrate:undo",
+    "db2:migrate:undo": "npx sequelize-cli --options-path ./.sequelizerc-db2 db:migrate:undo",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
