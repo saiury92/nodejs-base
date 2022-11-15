@@ -26,6 +26,8 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to application." });
 });
 
+require("./app/routes/turorial.routes")(app);
+
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
