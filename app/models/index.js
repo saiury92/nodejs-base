@@ -22,7 +22,7 @@ fs
     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
   })
   .forEach(file => {
-    const model = require(path.join(__dirname, file))(db.sequelize1, Sequelize.DataTypes);
+    const model = require(path.join(__dirname, 'db1', file))(db.sequelize1, Sequelize.DataTypes);
     db[model.name] = model;
   });
 
@@ -33,7 +33,7 @@ fs
     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
   })
   .forEach(file => {
-    const model = require(path.join(__dirname, file))(db.sequelize2, Sequelize.DataTypes);
+    const model = require(path.join(__dirname, 'db2', file))(db.sequelize2, Sequelize.DataTypes);
     db[model.name] = model;
   });
 
