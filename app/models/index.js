@@ -6,8 +6,8 @@ const Sequelize = require('sequelize');
 const process = require('process');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
-const config1 = require(__dirname + '/../../config/db1.config.json')[env];
-const config2 = require(__dirname + '/../../config/db2.config.json')[env];
+const config1 = require(__dirname + '/../../config/db1.config.js')[env];
+const config2 = require(__dirname + '/../../config/db2.config.js')[env];
 const db = {};
 
 /** Add Databases**/
