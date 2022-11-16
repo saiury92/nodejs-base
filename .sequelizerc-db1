@@ -3,7 +3,7 @@ require("babel-register");
 const path = require('path');
 
 module.exports = {
-  'config': path.resolve('config', 'db1.config.json'),
+  'config': path.resolve('config', 'db1.config.js'),
   'models-path': path.resolve('app', 'models', 'db1'),
   'seeders-path': path.resolve('db', 'seeders', 'db1'),
   'migrations-path': path.resolve('db', 'migrations', 'db1')
