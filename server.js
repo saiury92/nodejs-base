@@ -4,6 +4,9 @@ require('dotenv').config();
 const helmet = require('helmet');
 const morgan = require('morgan');
 const cors = require("cors");
+const db = require("./app/models");
+const Company = db.Company;
+const CompanyUser = db.CompanyUser;
 
 // express
 const express = require('express');
@@ -23,7 +26,27 @@ app.use(helmet());
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to application." });
+  const company = {
+    company_name: 'Test Company',
+    tel: 030303030,
+    email: 'test@test.com',
+  };
+  const companyUser = {
+    first_name: 'Test first_name',
+    last_name: 'Test last_name',
+    email: 'test@test.com',
+  };
+  Company.create(company)
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while creating the Company."
+      });
+    });
+  // res.json({ message: "Welcome to application." });
 });
 
 app.use(notFoundMiddleware);
