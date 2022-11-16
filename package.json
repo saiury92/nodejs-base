@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon serve.js",
-    "db1:create": "npx sequelize-cli --options-path ./.sequelizerc-db1 db:create",
-    "db2:create": "npx sequelize-cli --options-path ./.sequelizerc-db2 db:create",
+    "db1:create": "npx sequelize-cli --options-path ./.sequelizerc-db1 db:create --charset utf8mb4 --collate utf8mb4_unicode_ci",
+    "db2:create": "npx sequelize-cli --options-path ./.sequelizerc-db2 db:create --charset utf8mb4 --collate utf8mb4_unicode_ci",
     "db1:migrate:up": "npx sequelize-cli --options-path ./.sequelizerc-db1 db:migrate",
     "db2:migrate:up": "npx sequelize-cli --options-path ./.sequelizerc-db2 db:migrate",
     "db1:migrate:undo": "npx sequelize-cli --options-path ./.sequelizerc-db1 db:migrate:undo",
